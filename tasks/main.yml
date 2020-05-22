@@ -15,6 +15,6 @@
   when: myloader_stop_programs is defined
 
 - name: Run myloader command
-  shell: 'echo {{ lookup("template", "myloader_command.j2") }}'
+  shell: 'echo {{ lookup ("template", "myloader_command.j2") }}'
 
   
