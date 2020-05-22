@@ -1,5 +1,5 @@
 ---
-- name:  {{ myloader_stop_programs }}
+- name: '{{ state == "stopped" | ternary ("Stop", "Start") }} {{ myloader_stop_programs }}'
   systemd:
     name: '{{ myloader_stop_programs }}'
     state: '{{ state }}'
