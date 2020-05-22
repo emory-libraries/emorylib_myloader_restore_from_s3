@@ -4,3 +4,4 @@
     name: '{{ item }}'
     state: '{{ state }}'
   loop: '{{ myloader_stop_programs }}'
+  become: yes
