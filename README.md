@@ -13,7 +13,7 @@ Role Variables
 
 ```yaml
 myloader_restore:
-  notify_slack: no      # Optional send report to slack,
+  notify_slack: no      # Optional sends report to slack, otherwise report is only outputted to console
   option:               # Command line options or flags, underscores are converted into dashes
     _B: database_name   # Example flag, this one will get the database name, __database would also have worked
   s3:
@@ -42,6 +42,7 @@ boto3
 
 Example Playbook
 ----------------
+
 ```yaml
 # Example using s3 download
 - hosts: hosts_with_db_connection
@@ -82,4 +83,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Solomon Hilliard for Emory Libraries
