@@ -4,4 +4,5 @@
     name: '{{ item }}'
     state: '{{ state }}'
   loop: '{{ myloader_stop_programs }}'
-  become: yes
+  become: '{{ myloader_become }}'
+  become_user: '{{ myloader_become_user | d (omit) }}'
