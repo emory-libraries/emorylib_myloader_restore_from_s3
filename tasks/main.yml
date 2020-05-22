@@ -41,7 +41,7 @@
     path: '{{ bucket_key_path | d () }}'
     state: absent
   vars:
-    download: '{{ myloader_restore.download | d () }}'
+    download: '{{ myloader_restore.s3.download | d () }}'
   when: 
     - myloader_restore.s3 is defined
     - download.delete | d (true)
