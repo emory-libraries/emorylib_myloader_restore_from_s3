@@ -12,9 +12,15 @@
 
 - name: Include tasks to shutdown specified programs
   include_tasks: stop-programs.yml
+  vars:
+    state: stopped
   when: myloader_stop_programs is defined
 
 - name: Run myloader command
   shell: 'echo {{ lookup ("template", "myloader_command.j2") }}'
 
-  
+- name: Include tasks to restart specified programs
+  include_tasks: stop-programs.yml
+  vars:
+    state: started
+  when: myloader_stop_programs is defined
